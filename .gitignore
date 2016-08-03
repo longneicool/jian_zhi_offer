@@ -3,3 +3,4 @@
 *.bak
 *.py
 *.pyc
+build/
