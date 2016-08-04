@@ -9,7 +9,9 @@ FILE(GLOB_RECURSE HEAD_FILES code/*.h testcase/*.h)
 
 include_directories(
     gtest/
+    code/
     )
 add_executable(CMyString ${SOURCE_FILES} ${HEAD_FILES})
 target_link_libraries(CMyString gtest)
 target_link_libraries(CMyString pthread)
+add_test(NAME cmystring COMMAND cmystring)
