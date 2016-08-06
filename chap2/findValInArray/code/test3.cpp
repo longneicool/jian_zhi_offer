@@ -1,15 +1,18 @@
-#define NULL  0
-
-bool check(unsigned **array, unsigned rows, unsigned columns)
+#include "test3.h"
+bool IncreArray::isExist(unsigned val)
 {
-    if(array == NULL)
-        return false;
-
-    if(rows == 0 || columns == 0)
-        return false;
-
-    return true;
+    return check() && 
+        isExistInSonArray(1, 1, val);
 }
+
+bool IncreArray::isExistInSonArray(unsigned startRows, unsigned startColumns, unsigned val)
+{
+   if(startRows > _rows || startColumns > _columns) 
+       return false;
+
+
+}
+
 
 bool isExist(unsigned **array, unsigned rows, unsigned columns, unsigned val)
 {
