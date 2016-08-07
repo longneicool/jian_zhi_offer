@@ -1,37 +1,27 @@
 #include "test3.h"
-bool IncreArray::isExist(unsigned val)
+#define NULL 0
+
+bool find(int *array, int columns, int rows, int findVal)
 {
-    return check() && 
-        isExistInSonArray(1, 1, val);
+    if(array == NULL
+            ||columns == 0
+            ||rows == 0)
+        return false;
+
+    int row = 0;
+    int column = columns -1;
+    while(row < rows && column >= 0)
+    {
+        int rightTopVal = array[row*columns + column];
+
+        if(rightTopVal  == findVal)
+            return true;
+        else if(rightTopVal > findVal)
+            --column;
+        else
+            ++row; 
+    }
+
+    return false;
 }
-
-bool IncreArray::isExistInSonArray(unsigned startRows, unsigned startColumns, unsigned val)
-{
-   if(startRows > _rows || startColumns > _columns) 
-       return false;
-
-
-}
-
-
-bool isExist(unsigned **array, unsigned rows, unsigned columns, unsigned val)
-{
-    if(!check(array, rows, columns))
-        return false;
-
-    unsigned rightTopCorner = array[0][columns-1];
-
-    if(rightTopCorner == val)
-        return true;
-
-    if(rightTopCorner > val && columns == 1)
-        return false;
-    if(rightTopCorner < val && rows == 1)
-        return false;
-
-    if(rightTopCorner > val )
-        return isExist(&&array[1][columns-1], rows-1, 1, val);
-
-    return isExist(array, rows, columns-1, val);
-} 
 
