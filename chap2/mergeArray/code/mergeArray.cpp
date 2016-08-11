@@ -1,44 +1,35 @@
-
-struct Array
-{
-    Array(int* ptr, unsigned len)
-        : _ptr(ptr), _len(len)
-    {
-    }
-
-    int val(unsigned pos) const
-    {
-        return *(_ptr + pos - 1);
-    }
-
-    void set(unsigned pos, int val)
-    {
-        if(pos > _len)
-            return;
-
-        *(_ptr + pos - 1) = val;
-    }
-
-private:
-    int *_ptr;
-    const unsigned _len;
-};
+#include "Array.h"
 
 void merge(Array& a1, const Array &a2)
 {
-    const unsigned totalLen = a1.len + a2.len;
+    const unsigned totalLen = a1.length() + a2.length();
 
-    unsigned pos_a1 = a1.len - 1;
-    unsigned pos_a2 = a2.len - 1;
-    for(int i = totalLen - 1; i >= 0; i--)
+    unsigned pos_a1 = a1.length();
+    unsigned pos_a2 = a2.length();
+    for(int i = totalLen; i > 0; i--)
     {
-        if(a1.val(pos_a1) > a1.val(pos_a2))
+        if(pos_a1 == 0)
         {
-            *(a1.ptr + i) = a1.val(pos_a1);
+            a1.set(i, a2.val(pos_a2));
+            pos_a2--;
+            continue;
+        }
+
+        if(pos_a2 == 0)
+        {
+            a1.set(i, a1.val(pos_a2));
             pos_a1--;
             continue;
         }
-        *(a1.ptr + i) = a2.val(pos_a2);
+
+        if(a1.val(pos_a1) > a2.val(pos_a2))
+        {
+            a1.set(i, a1.val(pos_a1));
+            pos_a1--;
+            continue;
+        }
+
+        a1.set(i, a2.val(pos_a2));
         pos_a2--;
     }
 }
