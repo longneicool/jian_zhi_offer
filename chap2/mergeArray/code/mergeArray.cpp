@@ -17,7 +17,7 @@ void merge(Array& a1, const Array &a2)
 
         if(pos_a2 == 0)
         {
-            a1.set(i, a1.val(pos_a2));
+            a1.set(i, a1.val(pos_a1));
             pos_a1--;
             continue;
         }
