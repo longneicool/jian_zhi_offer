@@ -4,3 +4,6 @@
 *.py
 *.pyc
 build/
+*.project
+*.cproject
+*.settings/
