@@ -31,6 +31,24 @@ void MyQueue<T>::push(const T& val)
 }
 
 template<typename T>
+void MyQueue<T>::pop()
+{
+	if(secondStack.empty())
+		move(firstStack, secondStack);
+
+	secondStack.pop();
+}
+
+template<typename T>
+T& MyQueue<T>::front()
+{
+	if(secondStack.empty())
+		move(firstStack, secondStack);
+
+	return secondStack.top();
+}
+
+template<typename T>
 void MyQueue<T>::move(StackType &srcStack, StackType &dstStack)
 {
 	while(!srcStack.empty())
