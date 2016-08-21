@@ -12,18 +12,18 @@ struct TestStru
 };
 
 struct Checker;
-typedef void (*Func)(void *expected);
+typedef void (Checker::*Func)(void *expected);
 
 struct Checker
 {
 	Checker();
 
-	typedef map<Func, void*> MapType;
+	typedef map<void*, Func> MapType;
 	void add(Func p, void *expected);
 
 	void check();
 
-	static void checkTestStru(void *expected);
+	void checkTestStru(void *expected);
 private:
 	MapType checkFields;
 

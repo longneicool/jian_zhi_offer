@@ -15,7 +15,7 @@ void Checker::check()
 
 	while(it != checkFields.end())
 	{
-		(it->first)(it->second);
+		(this->*(it->second))(it->first);
 
 		it++;
 	}
@@ -23,12 +23,10 @@ void Checker::check()
 
 void Checker::checkTestStru(void *expected)
 {
-	TestStru *expectStr = (TestStru*)expected;
-	EXPECT_EQ(expectStr->a, 1);
-	EXPECT_EQ(expectStr->b, 2);
+	std::cout << "checkTestStru" << std::endl;
 }
 
 void Checker::add(Func p, void *expected)
 {
-	checkFields[p] = expected;
+	checkFields[expected] = p;
 }
