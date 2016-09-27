@@ -11,7 +11,7 @@ void insertSort(int *array, int size, int step)
 		{
 			int tmp = array[j];
 			int k;
-			for(k = j; k > 0 && array[k - step] > tmp; k -= step)
+			for(k = j; k - step >= 0 && array[k - step] > tmp; k -= step)
 				array[k] = array[k - step];
 			array[k] = tmp;
 		}
