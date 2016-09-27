@@ -14,13 +14,13 @@ TestSortAlgFixture::TestSortAlgFixture()
 	array[9] = 5;
 
 	sortedArray[0] = 1;
-	sortedArray[0] = 3;
-	sortedArray[0] = 5;
-	sortedArray[0] = 7;
-	sortedArray[0] = 9;
-	sortedArray[0] = 11;
-	sortedArray[0] = 11;
-	sortedArray[0] = 20;
-	sortedArray[0] = 29;
-	sortedArray[0] = 100;
+	sortedArray[1] = 3;
+	sortedArray[2] = 5;
+	sortedArray[3] = 7;
+	sortedArray[4] = 9;
+	sortedArray[5] = 11;
+	sortedArray[6] = 11;
+	sortedArray[7] = 20;
+	sortedArray[8] = 29;
+	sortedArray[9] = 100;
 }

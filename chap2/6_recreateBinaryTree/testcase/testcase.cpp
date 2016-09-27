@@ -10,5 +10,5 @@ TEST_F(BinaryTreeCreaterTest, test_normal_case)
 	BinaryTreeNodePtr head = construct(preOrderArray, inOrderArray, sizeof(inOrderArray)/sizeof(int));
 
 	int i = 0;
-	//EXPECT_EQ(1, head->val);
+	EXPECT_EQ(1, head->val);
 }
