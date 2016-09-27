@@ -24,7 +24,6 @@ void shellSort(int *array, int size)
 
 	for(int step = size/2; step > 0; step = step /2)
 	{
-
+		insertSort(array, size, step);
 	}
-
 }
