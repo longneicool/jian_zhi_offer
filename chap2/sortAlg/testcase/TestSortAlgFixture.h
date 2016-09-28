@@ -6,10 +6,6 @@
 struct TestSortAlgFixture : testing::Test
 {
 	TestSortAlgFixture();
-
-protected:
-	int array[10];
-	int sortedArray[10];
 };
 
 #endif
